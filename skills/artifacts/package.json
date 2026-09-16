@@ -1,6 +1,6 @@
 {
   "name": "@defyworks/artifacts",
-  "version": "0.1.1",
+  "version": "0.1.2",
   "description": "CLI and Claude Code skill for the self-hosted defy.works Artifacts platform: publish, share and inspect interactive HTML pages with a live database, presence and assets.",
   "license": "MIT",
   "type": "module",
