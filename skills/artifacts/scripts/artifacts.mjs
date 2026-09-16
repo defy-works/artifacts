@@ -10,6 +10,8 @@ import { join, basename, extname } from "node:path";
 
 const CONFIG_DIR = join(homedir(), ".config", "artifacts");
 const CONFIG = join(CONFIG_DIR, "config.json");
+/** The hosted instance; `--url` / `ARTIFACTS_URL` / config.json override it. */
+const DEFAULT_URL = "https://artifacts.defy.works";
 
 const TYPES = {
   ".png": "image/png", ".jpg": "image/jpeg", ".jpeg": "image/jpeg", ".gif": "image/gif", ".webp": "image/webp",
@@ -20,13 +22,11 @@ const TYPES = {
 };
 
 function loadConfig() {
-  const env = { url: process.env.ARTIFACTS_URL, token: process.env.ARTIFACTS_TOKEN };
-  if (env.url && env.token) return env;
-  if (existsSync(CONFIG)) {
-    const file = JSON.parse(readFileSync(CONFIG, "utf8"));
-    return { url: env.url || file.url, token: env.token || file.token };
-  }
-  return env;
+  const file = existsSync(CONFIG) ? JSON.parse(readFileSync(CONFIG, "utf8")) : {};
+  return {
+    url: process.env.ARTIFACTS_URL || file.url || DEFAULT_URL,
+    token: process.env.ARTIFACTS_TOKEN || file.token,
+  };
 }
 
 function die(msg, code = 1) {
@@ -57,7 +57,7 @@ function parseArgs(argv) {
 let cfg;
 async function req(method, path, { json, body, contentType } = {}) {
   cfg = cfg || loadConfig();
-  if (!cfg.url || !cfg.token) die("not configured — run: artifacts login --url <site> --token <token>");
+  if (!cfg.token) die("not configured — run: artifacts login --token <token>  (add --url for a self-hosted instance)");
   const headers = { authorization: `Bearer ${cfg.token}` };
   let payload;
   if (json !== undefined) {
@@ -96,12 +96,13 @@ const parseJsonArg = (v, what) => {
 
 const commands = {
   async login({ flags }) {
-    if (!flags.url || !flags.token) die("usage: login --url <site> --token <token>");
+    if (!flags.token) die("usage: login --token <token> [--url <site>]   (url defaults to https://artifacts.defy.works)");
+    const url = String(flags.url || DEFAULT_URL).replace(/\/$/, "");
     mkdirSync(CONFIG_DIR, { recursive: true });
-    writeFileSync(CONFIG, JSON.stringify({ url: String(flags.url).replace(/\/$/, ""), token: flags.token }, null, 2) + "\n", { mode: 0o600 });
+    writeFileSync(CONFIG, JSON.stringify({ url, token: flags.token }, null, 2) + "\n", { mode: 0o600 });
     cfg = null;
     const me = await req("GET", "/api/v1/me");
-    out(`Signed in as ${me.email} → ${CONFIG}`);
+    out(`Signed in as ${me.email} at ${url} → ${CONFIG}`);
   },
   async config() {
     const c = loadConfig();
@@ -287,7 +288,7 @@ const commands = {
   async help() {
     out(`artifacts <command>
 
-  login --url <site> --token <token>     save credentials
+  login --token <token> [--url <site>]   save credentials (url defaults to https://artifacts.defy.works)
   me | config | list
   publish <page.html> [--slug s] [--title t] [--description d] [--favicon e]
           [--capabilities '{"db":{}}'] [--link none|view|interact|edit] [--label l] [--file remote=local]
