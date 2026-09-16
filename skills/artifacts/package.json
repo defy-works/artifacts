@@ -1,0 +1,29 @@
+{
+  "name": "@defy-works/artifacts",
+  "version": "0.1.0",
+  "description": "CLI and Claude Code skill for the self-hosted defy.works Artifacts platform: publish, share and inspect interactive HTML pages with a live database, presence and assets.",
+  "license": "MIT",
+  "type": "module",
+  "bin": {
+    "artifacts": "scripts/artifacts.mjs"
+  },
+  "files": [
+    "scripts/",
+    "reference/",
+    "SKILL.md",
+    "README.md"
+  ],
+  "engines": {
+    "node": ">=18"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/defy-works/artifacts.git",
+    "directory": "skills/artifacts"
+  },
+  "homepage": "https://artifacts.defy.works",
+  "keywords": ["claude-code", "agent-skill", "artifacts", "defy.works"],
+  "publishConfig": {
+    "access": "public"
+  }
+}

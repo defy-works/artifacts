@@ -1,0 +1,49 @@
+name: Release
+# Publishes `@defy-works/artifacts` (the CLI + Claude Code skill in
+# skills/artifacts) whenever the version in its package.json changes on the
+# default branch. Authenticates with npm trusted publishing (OIDC): npm is
+# configured for this repository, this workflow file (`release.yml`) and the
+# `npm` environment; there is no token to rotate. The first version of a new
+# package still has to be published by hand once so the trusted-publisher
+# entry has a package to attach to.
+on:
+  push:
+    branches: [main]
+    paths:
+      - "skills/artifacts/**"
+      - ".github/workflows/release.yml"
+
+concurrency:
+  group: release-${{ github.ref }}
+  cancel-in-progress: false
+
+permissions:
+  contents: read
+  id-token: write
+
+jobs:
+  release:
+    if: github.ref_name == github.event.repository.default_branch
+    runs-on: ubuntu-latest
+    environment: npm
+    defaults:
+      run:
+        working-directory: skills/artifacts
+    steps:
+      - uses: actions/checkout@v4
+      # No `registry-url`: it writes an _authToken line that makes npm skip
+      # the OIDC exchange. Trusted publishing needs npm >= 11.5.1.
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 24
+      - run: npm install -g npm@latest
+      - name: Publish if this version is not on npm yet
+        run: |
+          NAME=$(node -p "require('./package.json').name")
+          VERSION=$(node -p "require('./package.json').version")
+          if npm view "$NAME@$VERSION" version >/dev/null 2>&1; then
+            echo "$NAME@$VERSION already published; nothing to do."
+            exit 0
+          fi
+          node scripts/artifacts.mjs help >/dev/null
+          npm publish --provenance --access public
