@@ -14,6 +14,11 @@ export default function LoginPage() {
           Sign in to publish, share and edit interactive pages.
         </p>
         <LoginForm google={hasGoogle} />
+        <p className="mt-6 text-center text-[11px] text-white/40">
+          By signing in you agree to the{" "}
+          <a href="/terms" className="text-indigo-300/80 hover:underline">terms</a> and{" "}
+          <a href="/privacy" className="text-indigo-300/80 hover:underline">privacy policy</a>.
+        </p>
       </div>
     </div>
   );

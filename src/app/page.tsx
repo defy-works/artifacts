@@ -31,6 +31,10 @@ export default async function HomePage() {
             </NextLink>
           </div>
         </section>
+        <footer className="px-6 pb-8 text-center text-[11px] text-white/40">
+          <NextLink href="/privacy" className="hover:text-white">Privacy</NextLink> ·{" "}
+          <NextLink href="/terms" className="hover:text-white">Terms</NextLink> · © 2026 defy.works
+        </footer>
       </div>
     );
   }

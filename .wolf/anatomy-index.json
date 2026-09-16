@@ -1,13 +1,13 @@
 {
   "version": 1,
   "meta": {
-    "lastScanned": "2026-09-16T21:41:49.386Z",
-    "fileCount": 41,
+    "lastScanned": "2026-09-16T22:33:05.946Z",
+    "fileCount": 44,
     "hits": 0,
     "misses": 0,
-    "renderedHash": "bcc000394f3721d8bb3935acd0ed16fca5facbe91c0497bdfe2f0159e19a71d9",
-    "storeUpdatedAt": "2026-09-16T21:41:49.390Z",
-    "rootHash": "cf6f25f3c1839c61"
+    "renderedHash": "0175b2b004a38d3f3d93ce65379fdf75cc52c66a7293c9e14e813b83670cfb5d",
+    "storeUpdatedAt": "2026-09-16T22:33:05.950Z",
+    "rootHash": "ee8007f857c6b41e"
   },
   "files": {
     "CLAUDE.md": {
@@ -762,6 +762,51 @@
       "mtimeMs": 1789594591131.753,
       "updatedAt": "2026-09-16T21:36:31.181Z",
       "source": "hook"
+    },
+    "src/components/shell/LegalPage.tsx": {
+      "description": "Prose layout for privacy / terms pages, in the defy.works editorial grammar.",
+      "tokens": 364,
+      "hash": "9cedb0ed026fec11",
+      "size": 1276,
+      "mtimeMs": 1789597942360.235,
+      "updatedAt": "2026-09-16T22:32:22.430Z",
+      "source": "hook"
+    },
+    "src/app/privacy/page.tsx": {
+      "description": "metadata",
+      "tokens": 2131,
+      "hash": "d4e703ac958caa08",
+      "size": 7459,
+      "mtimeMs": 1789597973278.8926,
+      "updatedAt": "2026-09-16T22:32:53.333Z",
+      "source": "hook",
+      "symbols": [
+        {
+          "name": "PrivacyPage",
+          "kind": "fn",
+          "startLine": 8,
+          "endLine": 150,
+          "tokens": 2064
+        }
+      ]
+    },
+    "src/app/terms/page.tsx": {
+      "description": "metadata",
+      "tokens": 834,
+      "hash": "359b37b95c50a35d",
+      "size": 2919,
+      "mtimeMs": 1789597985901.3423,
+      "updatedAt": "2026-09-16T22:33:05.945Z",
+      "source": "hook",
+      "symbols": [
+        {
+          "name": "TermsPage",
+          "kind": "fn",
+          "startLine": 8,
+          "endLine": 70,
+          "tokens": 774
+        }
+      ]
     }
   },
   "preamble": [

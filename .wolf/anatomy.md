@@ -1,7 +1,7 @@
 # anatomy.md
 
-> Auto-maintained by OpenWolf. Last scanned: 2026-09-16T21:41:49.386Z
-> Files: 41 tracked | Anatomy hits: 0 | Misses: 0
+> Auto-maintained by OpenWolf. Last scanned: 2026-09-16T22:33:05.946Z
+> Files: 44 tracked | Anatomy hits: 0 | Misses: 0
 
 > Project structure index. Auto-maintained by OpenWolf hooks and daemon.
 > Run `openwolf scan` to generate, or wait for the first Claude Code session.
@@ -44,10 +44,18 @@
 - `LoginForm.tsx` — Magic link only (plus Google when configured). No passwords anywhere. (~1302 tok)
 - `page.tsx` — metadata (~236 tok)
 
+## src/app/privacy/
+
+- `page.tsx` — metadata (~2131 tok)
+
 ## src/app/settings/tokens/
 
 - `page.tsx` — metadata (~343 tok)
 - `TokensPanel.tsx` — TokensPanel — renders form (~1088 tok)
+
+## src/app/terms/
+
+- `page.tsx` — metadata (~834 tok)
 
 ## src/components/editor/
 
@@ -61,6 +69,7 @@
 ## src/components/shell/
 
 - `Header.tsx` — Editorial top chrome, same grammar as defy.works: wordmark left, indexed (~1100 tok)
+- `LegalPage.tsx` — Prose layout for privacy / terms pages, in the defy.works editorial grammar. (~364 tok)
 
 ## src/components/ui/
 

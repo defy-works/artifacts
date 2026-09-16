@@ -63,3 +63,7 @@ description: chronological action log per session, consolidated weekly
 | 07:00 | Repo pushed to github.com/defy-works/artifacts; Coolify app created via API (project Artifacts, compose, domain artifacts.defy.works, env); first build failed on DATABASE_URL at import → lazy db client; redeploy finished, health 200 | src/db/index.ts, health route, STATUS | live | ~5k |
 | 07:05 | Prod magic link 500: Sendsprite SDK took empty SENDSPRITE_URL from container env as base URL → explicit default; webhook auto-deploys on push (never call /deploy) | email.ts, cerebrum | prod magic link 200 | ~2k |
 | 07:20 | Skill moved to skills/artifacts; installable with bunx skills add defy-works/artifacts --skill artifacts -g -a claude-code (git-based, no npm). Fixed help() not async | skills/, README, tsconfig, eslint | verified install | ~2k |
+| 07:40 | Scrubbed Coolify ids to .wolf/deploy.local.md (ignored), MIT LICENSE, history squashed to one commit (force-push), repo made PUBLIC | STATUS, LICENSE, README, .gitignore | public, clean history | ~2k |
+| 07:32 | Created src/components/shell/LegalPage.tsx | — | ~364 |
+| 07:32 | Created src/app/privacy/page.tsx | — | ~2131 |
+| 07:33 | Created src/app/terms/page.tsx | — | ~834 |
