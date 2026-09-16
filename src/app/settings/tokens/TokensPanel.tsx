@@ -43,9 +43,7 @@ export function TokensPanel({ initial, site }: { initial: Token[]; site: string 
     setTokens(tokens.filter((t) => t.id !== id));
   }
 
-  const setup = fresh
-    ? `mkdir -p ~/.config/artifacts && cat > ~/.config/artifacts/config.json <<'EOF'\n{ "url": "${site}", "token": "${fresh.token}" }\nEOF`
-    : "";
+  const setup = fresh ? `bunx @defyworks/artifacts login --url ${site} --token ${fresh.token}` : "";
 
   return (
     <div className="space-y-6">
@@ -53,7 +51,7 @@ export function TokensPanel({ initial, site }: { initial: Token[]; site: string 
         <div className="glass-strong border-indigo-400/40 p-5">
           <div className="num-stamp mb-2">Copy now — shown once</div>
           <p className="mb-3 text-sm">
-            Token <strong>{fresh.name}</strong> created. Configure the skill with:
+            Token <strong>{fresh.name}</strong> created. Connect the CLI and the Claude Code skill with:
           </p>
           <pre className="code-block thin-scroll">{setup}</pre>
           <div className="mt-3 flex gap-2">

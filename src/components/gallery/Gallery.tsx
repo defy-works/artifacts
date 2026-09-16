@@ -55,7 +55,7 @@ function Card({ a, index }: { a: ArtifactSummary; index: number }) {
   );
 }
 
-export function Gallery({ owned, shared }: { owned: ArtifactSummary[]; shared: ArtifactSummary[] }) {
+export function Gallery({ owned, shared, site }: { owned: ArtifactSummary[]; shared: ArtifactSummary[]; site: string }) {
   const router = useRouter();
   const [open, setOpen] = useState(false);
   const [title, setTitle] = useState("");
@@ -104,10 +104,12 @@ export function Gallery({ owned, shared }: { owned: ArtifactSummary[]; shared: A
           <span className="num-stamp">Nothing published yet</span>
           <h2 className="mt-3 text-2xl font-bold tracking-[-0.02em]">Publish your first page</h2>
           <p className="mt-3 max-w-lg text-sm leading-relaxed text-white/55">
-            Create a starter page here, or publish straight from Claude Code with the <code className="font-mono text-indigo-300">artifacts</code>{" "}
-            skill after creating an API token.
+            Create a starter page here, or publish from Claude Code. Install the skill once, connect it with an API
+            token, then ask Claude to publish a page.
           </p>
-          <pre className="code-block mt-5">node ~/.claude/skills/artifacts/scripts/artifacts.mjs publish page.html --link view</pre>
+          <pre className="code-block mt-5">{`bunx skills add defy-works/artifacts --skill artifacts -g -a claude-code
+bunx @defyworks/artifacts login --url ${site} --token art_…
+bunx @defyworks/artifacts publish page.html --link view`}</pre>
         </div>
       ) : (
         <div className="grid gap-4 sm:grid-cols-2 lg:grid-cols-3">

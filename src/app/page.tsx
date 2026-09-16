@@ -1,6 +1,6 @@
 import NextLink from "next/link";
 import { getViewer } from "@/lib/access";
-import { listForViewer } from "@/lib/services/artifacts";
+import { listForViewer, siteUrl } from "@/lib/services/artifacts";
 import { Header } from "@/components/shell/Header";
 import { Gallery } from "@/components/gallery/Gallery";
 import { Button } from "@/components/ui/Button";
@@ -43,7 +43,7 @@ export default async function HomePage() {
   return (
     <div className="min-h-[100dvh]">
       <Header />
-      <Gallery owned={owned} shared={shared} />
+      <Gallery owned={owned} shared={shared} site={siteUrl()} />
     </div>
   );
 }
