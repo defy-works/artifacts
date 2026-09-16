@@ -49,8 +49,6 @@ bunx skills add defy-works/artifacts --skill artifacts -g -a claude-code   # ski
 bunx @defyworks/artifacts help                                          # CLI only
 ```
 
-(`--skill artifacts` matters: the repo also carries its own project-only `openwolf` skill under `.claude/skills/`, which the CLI would otherwise install too.)
-
 It wraps the token-authenticated API with a dependency-free Node CLI:
 
 ```bash
