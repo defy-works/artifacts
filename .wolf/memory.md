@@ -67,3 +67,4 @@ description: chronological action log per session, consolidated weekly
 | 07:32 | Created src/components/shell/LegalPage.tsx | — | ~364 |
 | 07:32 | Created src/app/privacy/page.tsx | — | ~2131 |
 | 07:33 | Created src/app/terms/page.tsx | — | ~834 |
+| 08:05 | Google OAuth review: added /privacy + /terms (LegalPage), footer/login links; defy.works stamp composed into ink tile as app logo (120/512 png) and favicon | privacy, terms, LegalPage, globals.css, public/logo | pushed | ~4k |

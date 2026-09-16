@@ -41,7 +41,7 @@ export function Header() {
       <div className="grid grid-cols-[1fr_auto_1fr] items-center gap-4 px-5 py-3 sm:px-8">
         <NextLink href="/" className="group flex items-center gap-2.5 justify-self-start whitespace-nowrap">
           <img
-            src="/logo/stamp-dark.svg"
+            src="/logo/artifacts-mark.svg"
             alt=""
             aria-hidden="true"
             className="h-7 w-7 shrink-0 transition-transform duration-[var(--duration-normal)] ease-[var(--ease-out-soft)] group-hover:rotate-[8deg]"

@@ -1,8 +1,20 @@
 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512">
+  <defs>
+    <linearGradient id="g1" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#4338ca"/>
+      <stop offset="1" stop-color="#1e1b4b"/>
+    </linearGradient>
+    <linearGradient id="g2" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#818cf8"/>
+      <stop offset="1" stop-color="#4f46e5"/>
+    </linearGradient>
+  </defs>
   <rect width="512" height="512" rx="112" fill="#000000"/>
-  <rect x="1" y="1" width="510" height="510" rx="111" fill="none" stroke="#6366f1" stroke-opacity="0.55" stroke-width="2"/>
-  <g transform="translate(-68.92 -68.92) scale(0.15865)">
-<path fill="#ffffff" d="m1974.82,1857.43v373.43c-89.68-79.91-211.59-124.7-343.9-112.64-217.12,19.79-390.03,193.03-407.79,410.32-21.69,265.48,188.29,487.62,450.4,487.62h451.3v-1158.73h-150Zm-300.4,1008.29c-165.69,0-300-134.32-300-300s134.31-300,300-300,300,134.31,300,300-134.33,300-300,300Z"/>
-<path fill="#ffffff" d="m2874.42,1529.73h-150c0-165.65-134.31-299.93-300-299.93s-300,134.28-300,299.93v171h481.5v150h-481.5v711h-150v-1032c0-248.47,201.48-449.89,450-449.89s450,201.42,450,449.89Z"/>
-  </g>
+  <!-- versions, ascending: ink-indigo → indigo → white -->
+  <rect x="96" y="196" width="220" height="220" rx="44" fill="url(#g1)"/>
+  <rect x="146" y="146" width="220" height="220" rx="44" fill="url(#g2)"/>
+  <rect x="196" y="96" width="220" height="220" rx="44" fill="#ffffff"/>
+  <!-- live signal on the top tile -->
+  <circle cx="366" cy="146" r="22" fill="#6366f1"/>
+  <circle cx="366" cy="146" r="10" fill="#ffffff"/>
 </svg>

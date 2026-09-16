@@ -28,7 +28,7 @@ export function ViewerChrome({ artifact, version, level, viewer, peers, connecte
   return (
     <div className="flex h-12 shrink-0 items-center gap-3 border-b border-white/10 bg-ink px-3 sm:px-4">
       <NextLink href="/" className="flex shrink-0 items-center gap-2" aria-label="Gallery">
-        <img src="/logo/stamp-dark.svg" alt="" aria-hidden className="h-6 w-6" />
+        <img src="/logo/artifacts-mark.svg" alt="" aria-hidden className="h-6 w-6" />
       </NextLink>
       <span className="hidden h-5 w-px bg-white/15 sm:block" />
 
