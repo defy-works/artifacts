@@ -6,7 +6,14 @@ import "@/styles/globals.css";
 export const metadata: Metadata = {
   title: { default: "Artifacts", template: "%s · Artifacts" },
   description: "Publish and share interactive pages from Claude Code.",
-  icons: { icon: "/favicon.svg" },
+  icons: {
+    icon: [
+      { url: "/favicon.svg", type: "image/svg+xml" },
+      { url: "/favicon-32.png", sizes: "32x32", type: "image/png" },
+      { url: "/favicon-192.png", sizes: "192x192", type: "image/png" },
+    ],
+    apple: "/favicon-192.png",
+  },
 };
 
 export const viewport: Viewport = {
