@@ -69,3 +69,4 @@ description: chronological action log per session, consolidated weekly
 | 07:33 | Created src/app/terms/page.tsx | — | ~834 |
 | 08:05 | Google OAuth review: added /privacy + /terms (LegalPage), footer/login links; defy.works stamp composed into ink tile as app logo (120/512 png) and favicon | privacy, terms, LegalPage, globals.css, public/logo | pushed | ~4k |
 | 08:20 | Replaced defy.works stamp with a distinct Artifacts mark (stacked ascending tiles + live dot) for OAuth logo, favicon, header/login/viewer chrome | public/logo, favicon, Header, login, ViewerChrome | pushed | ~2k |
+| 08:25 | @defyworks/artifacts 0.1.0 and 0.1.1 published manually by user (2FA); CLI defaults URL to artifacts.defy.works; release.yml OIDC publish still fails ENEEDAUTH → trusted publisher not configured on npm yet | skills/artifacts, release.yml | npm live | ~3k |
