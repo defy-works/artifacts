@@ -108,7 +108,7 @@ export function Gallery({ owned, shared, site }: { owned: ArtifactSummary[]; sha
             token, then ask Claude to publish a page.
           </p>
           <pre className="code-block mt-5">{`bunx skills add defy-works/artifacts --skill artifacts -g -a claude-code
-bunx @defyworks/artifacts login --url ${site} --token art_…
+bunx @defyworks/artifacts login --token art_…${site === "https://artifacts.defy.works" ? "" : ` --url ${site}`}
 bunx @defyworks/artifacts publish page.html --link view`}</pre>
         </div>
       ) : (

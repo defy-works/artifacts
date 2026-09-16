@@ -52,7 +52,7 @@ bunx @defyworks/artifacts help                                          # CLI on
 It wraps the token-authenticated API with a dependency-free Node CLI:
 
 ```bash
-node ~/.claude/skills/artifacts/scripts/artifacts.mjs login --url https://artifacts.defy.works --token art_…
+node ~/.claude/skills/artifacts/scripts/artifacts.mjs login --token art_…   # --url only for self-hosted
 node ~/.claude/skills/artifacts/scripts/artifacts.mjs publish page.html --slug retro --capabilities '{"db":{},"room":{}}' --link interact
 ```
 

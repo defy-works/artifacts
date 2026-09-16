@@ -43,7 +43,9 @@ export function TokensPanel({ initial, site }: { initial: Token[]; site: string 
     setTokens(tokens.filter((t) => t.id !== id));
   }
 
-  const setup = fresh ? `bunx @defyworks/artifacts login --url ${site} --token ${fresh.token}` : "";
+  const setup = fresh
+    ? `bunx @defyworks/artifacts login --token ${fresh.token}${site === "https://artifacts.defy.works" ? "" : ` --url ${site}`}`
+    : "";
 
   return (
     <div className="space-y-6">

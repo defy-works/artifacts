@@ -12,8 +12,9 @@ Everything goes through `scripts/artifacts.mjs` (Node 18+, no dependencies). Run
 ## Setup (once per machine)
 
 1. The user creates a token at `<site>/settings/tokens`.
-2. Save it: `node <skill>/scripts/artifacts.mjs login --url https://artifacts.example.com --token art_…`
-   (or export `ARTIFACTS_URL` and `ARTIFACTS_TOKEN`). Config lives in `~/.config/artifacts/config.json`.
+2. Save it: `node <skill>/scripts/artifacts.mjs login --token art_…` (or export `ARTIFACTS_TOKEN`). The URL defaults
+   to `https://artifacts.defy.works`; pass `--url` or `ARTIFACTS_URL` only for a self-hosted instance. Config lives in
+   `~/.config/artifacts/config.json`.
 3. `node <skill>/scripts/artifacts.mjs me` confirms it works.
 
 If `me` fails with `unauthorized`, ask the user for a token; do not guess.
