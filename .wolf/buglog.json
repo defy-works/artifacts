@@ -1,0 +1,65 @@
+{
+  "bugs": [
+    {
+      "id": "srcdoc-hydration",
+      "date": "2026-09-17",
+      "error_message": "A tree hydrated but some attributes of the server rendered HTML didn't match the client properties; iframe srcdoc stayed empty",
+      "root_cause": "srcdoc computed from window.location.origin during render: server rendered '' and client rendered the real string, React refused to patch the mismatch",
+      "fix": "Resolve origin in useEffect into state; render empty srcdoc on the server and first client pass",
+      "files": [
+        "src/components/viewer/ArtifactViewer.tsx",
+        "src/components/editor/HtmlEditor.tsx"
+      ],
+      "tags": [
+        "nextjs",
+        "hydration",
+        "iframe"
+      ]
+    },
+    {
+      "id": "underscore-routes-404",
+      "date": "2026-09-17",
+      "error_message": "GET /_blob/<id> and /_files/... returned 404 from the Next not-found page",
+      "root_cause": "App Router ignores folders starting with `_` (private folders)",
+      "fix": "Moved to src/app/blob and src/app/files and added rewrites for /_blob and /_files in next.config.ts",
+      "files": [
+        "next.config.ts",
+        "src/app/blob/[id]/route.ts",
+        "src/app/files/[artifactId]/[...path]/route.ts"
+      ],
+      "tags": [
+        "nextjs",
+        "routing"
+      ]
+    },
+    {
+      "id": "sharedialog-window-ssr",
+      "date": "2026-09-17",
+      "error_message": "ReferenceError: window is not defined at ShareDialog",
+      "root_cause": "Client component read window.location during SSR render",
+      "fix": "Guard with typeof window === 'undefined'",
+      "files": [
+        "src/components/viewer/ShareDialog.tsx"
+      ],
+      "tags": [
+        "nextjs",
+        "ssr"
+      ]
+    },
+    {
+      "id": "sendsprite-empty-base-url",
+      "date": "2026-09-17",
+      "error_message": "TypeError: Invalid URL input '/api/v1/emails' from Better Auth magic-link on production",
+      "root_cause": "Coolify passes every compose env var, so SENDSPRITE_URL arrived as an empty string; the sendsprite SDK reads that env itself and used '' as baseUrl",
+      "fix": "Pass baseUrl explicitly: process.env.SENDSPRITE_URL?.trim() || 'https://sendsprite.com'",
+      "files": [
+        "src/lib/email.ts"
+      ],
+      "tags": [
+        "sendsprite",
+        "coolify",
+        "env"
+      ]
+    }
+  ]
+}

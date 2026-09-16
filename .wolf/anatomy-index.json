@@ -1,0 +1,772 @@
+{
+  "version": 1,
+  "meta": {
+    "lastScanned": "2026-09-16T21:41:49.386Z",
+    "fileCount": 41,
+    "hits": 0,
+    "misses": 0,
+    "renderedHash": "bcc000394f3721d8bb3935acd0ed16fca5facbe91c0497bdfe2f0159e19a71d9",
+    "storeUpdatedAt": "2026-09-16T21:41:49.390Z",
+    "rootHash": "cf6f25f3c1839c61"
+  },
+  "files": {
+    "CLAUDE.md": {
+      "description": "OpenWolf",
+      "tokens": 99,
+      "hash": "074d6b42b583729a",
+      "size": 395,
+      "mtimeMs": 1789570453552.6938,
+      "updatedAt": "2026-09-16T14:54:13.564Z",
+      "source": "scan"
+    },
+    "src/lib/serve-html.ts": {
+      "description": "Prepare a published page for the viewer frame: inject the runtime as",
+      "tokens": 384,
+      "hash": "9c1582cf437aeeed",
+      "size": 1341,
+      "mtimeMs": 1789571860350.757,
+      "updatedAt": "2026-09-16T15:17:40.411Z",
+      "source": "hook"
+    },
+    "src/lib/bridge/api.ts": {
+      "description": "Exports ClientApiError, api, artifactUrl",
+      "tokens": 453,
+      "hash": "f0040c90e1a4c92f",
+      "size": 1585,
+      "mtimeMs": 1789571866343.6895,
+      "updatedAt": "2026-09-16T15:17:46.401Z",
+      "source": "hook"
+    },
+    "src/lib/bridge/realtime-client.ts": {
+      "description": "One EventSource per open artifact, shared by the viewer chrome and the",
+      "tokens": 604,
+      "hash": "ee2ab8e678d4719e",
+      "size": 2114,
+      "mtimeMs": 1789571873730.606,
+      "updatedAt": "2026-09-16T15:17:53.797Z",
+      "source": "hook",
+      "symbols": [
+        {
+          "name": "RealtimeClient",
+          "kind": "class",
+          "startLine": 12,
+          "endLine": 84,
+          "tokens": 502
+        }
+      ]
+    },
+    "src/lib/bridge/host.ts": {
+      "description": "Host side of the artifact runtime. Receives `use`/`call`/`subscribe`",
+      "tokens": 7447,
+      "hash": "13329c5126f88005",
+      "size": 26062,
+      "mtimeMs": 1789571956150.6753,
+      "updatedAt": "2026-09-16T15:19:16.221Z",
+      "source": "hook",
+      "symbols": [
+        {
+          "name": "HostArtifact",
+          "kind": "section",
+          "startLine": 11,
+          "endLine": 20,
+          "tokens": 83
+        },
+        {
+          "name": "HostOptions",
+          "kind": "section",
+          "startLine": 21,
+          "endLine": 36,
+          "tokens": 168
+        },
+        {
+          "name": "err",
+          "kind": "fn",
+          "startLine": 37,
+          "endLine": 40,
+          "tokens": 34
+        },
+        {
+          "name": "toCapError",
+          "kind": "fn",
+          "startLine": 41,
+          "endLine": 54,
+          "tokens": 222
+        },
+        {
+          "name": "BridgeHost",
+          "kind": "class",
+          "startLine": 55,
+          "endLine": 647,
+          "tokens": 6762
+        },
+        {
+          "name": "blobToBase64",
+          "kind": "fn",
+          "startLine": 648,
+          "endLine": 656,
+          "tokens": 78
+        }
+      ]
+    },
+    "src/styles/globals.css": {
+      "description": "Styles: 19 rules, 37 vars",
+      "tokens": 1496,
+      "hash": "47761489a632e19d",
+      "size": 5242,
+      "mtimeMs": 1789571995444.2317,
+      "updatedAt": "2026-09-16T15:19:55.506Z",
+      "source": "hook"
+    },
+    "src/components/ui/Button.tsx": {
+      "description": "BASE",
+      "tokens": 436,
+      "hash": "aee4a318497fb25c",
+      "size": 1524,
+      "mtimeMs": 1789572009355.0747,
+      "updatedAt": "2026-09-16T15:20:09.418Z",
+      "source": "hook"
+    },
+    "src/components/ui/Badge.tsx": {
+      "description": "BASE",
+      "tokens": 326,
+      "hash": "aa755736cee0fc15",
+      "size": 1140,
+      "mtimeMs": 1789572014227.0198,
+      "updatedAt": "2026-09-16T15:20:14.293Z",
+      "source": "hook"
+    },
+    "src/components/ui/Input.tsx": {
+      "description": "INPUT_BASE_CLASS",
+      "tokens": 379,
+      "hash": "de162c030b3c138d",
+      "size": 1326,
+      "mtimeMs": 1789572020290.9514,
+      "updatedAt": "2026-09-16T15:20:20.348Z",
+      "source": "hook"
+    },
+    "src/components/ui/Label.tsx": {
+      "description": "Editorial stamp label — mono, tracked, uppercase, indigo-tinted.",
+      "tokens": 114,
+      "hash": "aa2b782bb98a74ef",
+      "size": 399,
+      "mtimeMs": 1789572022540.926,
+      "updatedAt": "2026-09-16T15:20:22.605Z",
+      "source": "hook"
+    },
+    "src/components/ui/Spinner.tsx": {
+      "description": "Spinner",
+      "tokens": 95,
+      "hash": "fa91fff564311edb",
+      "size": 331,
+      "mtimeMs": 1789572024603.9026,
+      "updatedAt": "2026-09-16T15:20:24.646Z",
+      "source": "hook"
+    },
+    "src/components/ui/Dialog.tsx": {
+      "description": "Block dismissal by backdrop / escape (consent prompts).",
+      "tokens": 410,
+      "hash": "c7dbd8e7ba98a9d1",
+      "size": 1435,
+      "mtimeMs": 1789572031668.823,
+      "updatedAt": "2026-09-16T15:20:31.736Z",
+      "source": "hook"
+    },
+    "src/lib/format.ts": {
+      "description": "Exports timeAgo, bytes, capabilityList",
+      "tokens": 242,
+      "hash": "6e486ee3be9f08fa",
+      "size": 845,
+      "mtimeMs": 1789572035921.775,
+      "updatedAt": "2026-09-16T15:20:35.984Z",
+      "source": "hook"
+    },
+    "src/providers/Providers.tsx": {
+      "description": "Providers",
+      "tokens": 165,
+      "hash": "2b5212ed3665c12f",
+      "size": 577,
+      "mtimeMs": 1789572038416.7468,
+      "updatedAt": "2026-09-16T15:20:38.466Z",
+      "source": "hook"
+    },
+    "src/components/shell/Header.tsx": {
+      "description": "Editorial top chrome, same grammar as defy.works: wordmark left, indexed",
+      "tokens": 1100,
+      "hash": "b64ed55032809c24",
+      "size": 3849,
+      "mtimeMs": 1789572051104.6035,
+      "updatedAt": "2026-09-16T15:20:51.164Z",
+      "source": "hook",
+      "symbols": [
+        {
+          "name": "Header",
+          "kind": "fn",
+          "startLine": 18,
+          "endLine": 102,
+          "tokens": 956
+        }
+      ]
+    },
+    "src/app/layout.tsx": {
+      "description": "metadata",
+      "tokens": 215,
+      "hash": "454899a144aee3e6",
+      "size": 752,
+      "mtimeMs": 1789572054292.5676,
+      "updatedAt": "2026-09-16T15:20:54.345Z",
+      "source": "hook"
+    },
+    "src/app/login/page.tsx": {
+      "description": "metadata",
+      "tokens": 236,
+      "hash": "2d217a5c035b9b18",
+      "size": 833,
+      "mtimeMs": 1789594595068.724,
+      "updatedAt": "2026-09-16T21:36:35.131Z",
+      "source": "hook"
+    },
+    "src/app/login/LoginForm.tsx": {
+      "description": "Magic link only (plus Google when configured). No passwords anywhere.",
+      "tokens": 1302,
+      "hash": "23276183165c9dfc",
+      "size": 4556,
+      "mtimeMs": 1789594909334.1719,
+      "updatedAt": "2026-09-16T21:41:49.386Z",
+      "source": "hook",
+      "symbols": [
+        {
+          "name": "GoogleIcon",
+          "kind": "fn",
+          "startLine": 12,
+          "endLine": 23,
+          "tokens": 142
+        },
+        {
+          "name": "Inner",
+          "kind": "fn",
+          "startLine": 24,
+          "endLine": 130,
+          "tokens": 995
+        },
+        {
+          "name": "LoginForm",
+          "kind": "fn",
+          "startLine": 131,
+          "endLine": 138,
+          "tokens": 46
+        }
+      ]
+    },
+    "src/app/page.tsx": {
+      "description": "dynamic",
+      "tokens": 450,
+      "hash": "335f6e4676025057",
+      "size": 1574,
+      "mtimeMs": 1789572104583,
+      "updatedAt": "2026-09-16T15:21:44.644Z",
+      "source": "hook"
+    },
+    "src/components/gallery/Gallery.tsx": {
+      "description": "Card — renders form, modal",
+      "tokens": 1515,
+      "hash": "19d69ff781e97f26",
+      "size": 5308,
+      "mtimeMs": 1789572124904.7708,
+      "updatedAt": "2026-09-16T15:22:04.963Z",
+      "source": "hook",
+      "symbols": [
+        {
+          "name": "ArtifactSummary",
+          "kind": "section",
+          "startLine": 16,
+          "endLine": 30,
+          "tokens": 86
+        },
+        {
+          "name": "Card",
+          "kind": "fn",
+          "startLine": 31,
+          "endLine": 56,
+          "tokens": 380
+        },
+        {
+          "name": "Gallery",
+          "kind": "fn",
+          "startLine": 57,
+          "endLine": 146,
+          "tokens": 891
+        }
+      ]
+    },
+    "src/components/gallery/starter.ts": {
+      "description": "Starter page for artifacts created in the browser: shows the runtime working.",
+      "tokens": 827,
+      "hash": "edd43ffedb016b28",
+      "size": 2894,
+      "mtimeMs": 1789572137593.6277,
+      "updatedAt": "2026-09-16T15:22:17.652Z",
+      "source": "hook",
+      "symbols": [
+        {
+          "name": "STARTER_HTML",
+          "kind": "fn",
+          "startLine": 2,
+          "endLine": 67,
+          "tokens": 803
+        }
+      ]
+    },
+    "src/app/settings/tokens/page.tsx": {
+      "description": "metadata",
+      "tokens": 343,
+      "hash": "e6a85201686780ae",
+      "size": 1201,
+      "mtimeMs": 1789572142900.5676,
+      "updatedAt": "2026-09-16T15:22:22.956Z",
+      "source": "hook"
+    },
+    "src/app/settings/tokens/TokensPanel.tsx": {
+      "description": "TokensPanel — renders form",
+      "tokens": 1088,
+      "hash": "e96793911f1b554d",
+      "size": 3813,
+      "mtimeMs": 1789572157716.4006,
+      "updatedAt": "2026-09-16T15:22:37.769Z",
+      "source": "hook",
+      "symbols": [
+        {
+          "name": "Token",
+          "kind": "section",
+          "startLine": 11,
+          "endLine": 18,
+          "tokens": 34
+        },
+        {
+          "name": "TokensPanel",
+          "kind": "fn",
+          "startLine": 19,
+          "endLine": 110,
+          "tokens": 967
+        }
+      ]
+    },
+    "src/app/not-found.tsx": {
+      "description": "NotFound",
+      "tokens": 248,
+      "hash": "2f98877b6b5bccf6",
+      "size": 868,
+      "mtimeMs": 1789572161326.3599,
+      "updatedAt": "2026-09-16T15:22:41.383Z",
+      "source": "hook"
+    },
+    "src/app/a/[slug]/page.tsx": {
+      "description": "dynamic",
+      "tokens": 539,
+      "hash": "35db508e86e9ccb7",
+      "size": 1886,
+      "mtimeMs": 1789572172323.2358,
+      "updatedAt": "2026-09-16T15:22:52.381Z",
+      "source": "hook",
+      "symbols": [
+        {
+          "name": "load",
+          "kind": "fn",
+          "startLine": 12,
+          "endLine": 24,
+          "tokens": 96
+        },
+        {
+          "name": "generateMetadata",
+          "kind": "fn",
+          "startLine": 25,
+          "endLine": 31,
+          "tokens": 84
+        },
+        {
+          "name": "ArtifactPage",
+          "kind": "fn",
+          "startLine": 32,
+          "endLine": 55,
+          "tokens": 233
+        }
+      ]
+    },
+    "src/components/viewer/ArtifactViewer.tsx": {
+      "description": "ArtifactViewer — renders modal",
+      "tokens": 2179,
+      "hash": "30e88e943c586743",
+      "size": 7625,
+      "mtimeMs": 1789572200011.9233,
+      "updatedAt": "2026-09-16T15:23:20.071Z",
+      "source": "hook",
+      "symbols": [
+        {
+          "name": "ViewerInitial",
+          "kind": "section",
+          "startLine": 18,
+          "endLine": 30,
+          "tokens": 113
+        },
+        {
+          "name": "ArtifactViewer",
+          "kind": "fn",
+          "startLine": 31,
+          "endLine": 202,
+          "tokens": 1847
+        }
+      ]
+    },
+    "src/components/viewer/ViewerChrome.tsx": {
+      "description": "ViewerChrome",
+      "tokens": 963,
+      "hash": "b8af9e1cfee194a9",
+      "size": 3373,
+      "mtimeMs": 1789572213386.7727,
+      "updatedAt": "2026-09-16T15:23:33.458Z",
+      "source": "hook",
+      "symbols": [
+        {
+          "name": "Props",
+          "kind": "section",
+          "startLine": 12,
+          "endLine": 24,
+          "tokens": 96
+        },
+        {
+          "name": "ViewerChrome",
+          "kind": "fn",
+          "startLine": 25,
+          "endLine": 90,
+          "tokens": 769
+        }
+      ]
+    },
+    "src/components/viewer/ShareDialog.tsx": {
+      "description": "LINK_OPTIONS — renders form, modal",
+      "tokens": 1550,
+      "hash": "fa626d2941d500aa",
+      "size": 5425,
+      "mtimeMs": 1789572231714.566,
+      "updatedAt": "2026-09-16T15:23:51.776Z",
+      "source": "hook",
+      "symbols": [
+        {
+          "name": "Share",
+          "kind": "section",
+          "startLine": 13,
+          "endLine": 24,
+          "tokens": 95
+        },
+        {
+          "name": "ShareDialog",
+          "kind": "fn",
+          "startLine": 25,
+          "endLine": 152,
+          "tokens": 1320
+        }
+      ]
+    },
+    "src/components/viewer/VersionsPanel.tsx": {
+      "description": "VersionsPanel",
+      "tokens": 845,
+      "hash": "69a886ece7c3a1e9",
+      "size": 2961,
+      "mtimeMs": 1789572242084.449,
+      "updatedAt": "2026-09-16T15:24:02.150Z",
+      "source": "hook",
+      "symbols": [
+        {
+          "name": "VersionRow",
+          "kind": "section",
+          "startLine": 12,
+          "endLine": 20,
+          "tokens": 43
+        },
+        {
+          "name": "VersionsPanel",
+          "kind": "fn",
+          "startLine": 21,
+          "endLine": 98,
+          "tokens": 694
+        }
+      ]
+    },
+    "src/components/viewer/SidePanel.tsx": {
+      "description": "SidePanel",
+      "tokens": 236,
+      "hash": "49f806f387ac3dc8",
+      "size": 825,
+      "mtimeMs": 1789572245885.406,
+      "updatedAt": "2026-09-16T15:24:05.930Z",
+      "source": "hook"
+    },
+    "src/components/viewer/CommentsPanel.tsx": {
+      "description": "CommentsPanel",
+      "tokens": 1575,
+      "hash": "7c0a9e267ca6fb1f",
+      "size": 5513,
+      "mtimeMs": 1789572264262.1987,
+      "updatedAt": "2026-09-16T15:24:24.325Z",
+      "source": "hook",
+      "symbols": [
+        {
+          "name": "CommentRow",
+          "kind": "section",
+          "startLine": 14,
+          "endLine": 23,
+          "tokens": 48
+        },
+        {
+          "name": "CommentsPanel",
+          "kind": "fn",
+          "startLine": 24,
+          "endLine": 131,
+          "tokens": 950
+        },
+        {
+          "name": "CommentItem",
+          "kind": "fn",
+          "startLine": 132,
+          "endLine": 185,
+          "tokens": 446
+        }
+      ]
+    },
+    "src/app/a/[slug]/edit/page.tsx": {
+      "description": "dynamic",
+      "tokens": 392,
+      "hash": "cf5cc350cee44228",
+      "size": 1371,
+      "mtimeMs": 1789572269648.138,
+      "updatedAt": "2026-09-16T15:24:29.706Z",
+      "source": "hook"
+    },
+    "src/components/editor/HtmlEditor.tsx": {
+      "description": "CAPS",
+      "tokens": 3141,
+      "hash": "61b7810e75a1d90c",
+      "size": 10997,
+      "mtimeMs": 1789572304762.742,
+      "updatedAt": "2026-09-16T15:25:04.828Z",
+      "source": "hook",
+      "symbols": [
+        {
+          "name": "FileRow",
+          "kind": "section",
+          "startLine": 16,
+          "endLine": 23,
+          "tokens": 46
+        },
+        {
+          "name": "HtmlEditor",
+          "kind": "fn",
+          "startLine": 24,
+          "endLine": 261,
+          "tokens": 2930
+        }
+      ]
+    },
+    "skills/artifacts/SKILL.md": {
+      "description": "Artifacts (self-hosted)",
+      "tokens": 1380,
+      "hash": "d4a86a4d8606e252",
+      "size": 5532,
+      "mtimeMs": 1789572713366.1357,
+      "updatedAt": "2026-09-16T15:31:53.439Z",
+      "source": "hook"
+    },
+    "skills/artifacts/scripts/artifacts.mjs": {
+      "description": "artifacts — CLI for the self-hosted Artifacts platform.",
+      "tokens": 3698,
+      "hash": "04dc85e2cadc0490",
+      "size": 13881,
+      "mtimeMs": 1789572769443.5037,
+      "updatedAt": "2026-09-16T15:32:49.498Z",
+      "source": "hook",
+      "symbols": [
+        {
+          "name": "loadConfig",
+          "kind": "fn",
+          "startLine": 22,
+          "endLine": 31,
+          "tokens": 95
+        },
+        {
+          "name": "die",
+          "kind": "fn",
+          "startLine": 32,
+          "endLine": 37,
+          "tokens": 48
+        },
+        {
+          "name": "parseArgs",
+          "kind": "fn",
+          "startLine": 38,
+          "endLine": 57,
+          "tokens": 145
+        },
+        {
+          "name": "req",
+          "kind": "fn",
+          "startLine": 58,
+          "endLine": 84,
+          "tokens": 260
+        },
+        {
+          "name": "out",
+          "kind": "fn",
+          "startLine": 85,
+          "endLine": 85,
+          "tokens": 25
+        },
+        {
+          "name": "enc",
+          "kind": "fn",
+          "startLine": 86,
+          "endLine": 86,
+          "tokens": 12
+        },
+        {
+          "name": "filePath",
+          "kind": "fn",
+          "startLine": 87,
+          "endLine": 87,
+          "tokens": 16
+        },
+        {
+          "name": "readArg",
+          "kind": "fn",
+          "startLine": 88,
+          "endLine": 88,
+          "tokens": 31
+        },
+        {
+          "name": "parseJsonArg",
+          "kind": "fn",
+          "startLine": 89,
+          "endLine": 309,
+          "tokens": 3022
+        }
+      ]
+    },
+    "skills/artifacts/reference/runtime.md": {
+      "description": "Page runtime: `window.claude`",
+      "tokens": 1973,
+      "hash": "074996f55fa7d44a",
+      "size": 7932,
+      "mtimeMs": 1789572806868.0818,
+      "updatedAt": "2026-09-16T15:33:26.924Z",
+      "source": "hook"
+    },
+    "skills/artifacts/reference/design-tokens.md": {
+      "description": "defy.works design tokens",
+      "tokens": 702,
+      "hash": "a37b31d27857dbb1",
+      "size": 2816,
+      "mtimeMs": 1789572822558.905,
+      "updatedAt": "2026-09-16T15:33:42.635Z",
+      "source": "hook"
+    },
+    "README.md": {
+      "description": "Project documentation",
+      "tokens": 1094,
+      "hash": "c7227a096a71ab70",
+      "size": 4402,
+      "mtimeMs": 1789572893844.1018,
+      "updatedAt": "2026-09-16T15:34:53.895Z",
+      "source": "hook"
+    },
+    "src/lib/email.ts": {
+      "description": "Transactional email through Sendsprite (defy.works' own SES-backed API).",
+      "tokens": 1639,
+      "hash": "7b5cec428fda6f2c",
+      "size": 5736,
+      "mtimeMs": 1789594579272.8386,
+      "updatedAt": "2026-09-16T21:36:19.335Z",
+      "source": "hook",
+      "symbols": [
+        {
+          "name": "Mail",
+          "kind": "section",
+          "startLine": 17,
+          "endLine": 26,
+          "tokens": 53
+        },
+        {
+          "name": "sendEmail",
+          "kind": "fn",
+          "startLine": 27,
+          "endLine": 43,
+          "tokens": 131
+        },
+        {
+          "name": "escape",
+          "kind": "fn",
+          "startLine": 44,
+          "endLine": 51,
+          "tokens": 87
+        },
+        {
+          "name": "layout",
+          "kind": "fn",
+          "startLine": 52,
+          "endLine": 82,
+          "tokens": 781
+        },
+        {
+          "name": "magicLinkMail",
+          "kind": "fn",
+          "startLine": 83,
+          "endLine": 92,
+          "tokens": 116
+        },
+        {
+          "name": "verificationMail",
+          "kind": "fn",
+          "startLine": 93,
+          "endLine": 102,
+          "tokens": 121
+        },
+        {
+          "name": "shareInviteMail",
+          "kind": "fn",
+          "startLine": 103,
+          "endLine": 112,
+          "tokens": 142
+        }
+      ]
+    },
+    "src/lib/auth.ts": {
+      "description": "Exports auth, hasGoogle, hasEmail, Session",
+      "tokens": 704,
+      "hash": "a0bc1642b9d43129",
+      "size": 2463,
+      "mtimeMs": 1789594589322.7659,
+      "updatedAt": "2026-09-16T21:36:29.366Z",
+      "source": "hook",
+      "symbols": [
+        {
+          "name": "assertAllowed",
+          "kind": "fn",
+          "startLine": 23,
+          "endLine": 87,
+          "tokens": 502
+        }
+      ]
+    },
+    "src/lib/auth-client.ts": {
+      "description": "Exports authClient",
+      "tokens": 94,
+      "hash": "f917b2706687508e",
+      "size": 326,
+      "mtimeMs": 1789594591131.753,
+      "updatedAt": "2026-09-16T21:36:31.181Z",
+      "source": "hook"
+    }
+  },
+  "preamble": [
+    "> Project structure index. Auto-maintained by OpenWolf hooks and daemon.",
+    "> Run `openwolf scan` to generate, or wait for the first Claude Code session.",
+    "> Status: Pending initial scan"
+  ]
+}

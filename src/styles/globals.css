@@ -1,0 +1,294 @@
+@import "tailwindcss";
+
+/* ========== FONTS (self-hosted, shared with defy.works site_v2) ========== */
+
+@font-face {
+  font-family: "Space Grotesk";
+  src: url("/fonts/SpaceGrotesk-Variable.woff2") format("woff2-variations");
+  font-weight: 300 700;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "SUIT";
+  src: url("/fonts/SUIT-Variable.woff2") format("woff2-variations");
+  font-weight: 100 900;
+  font-style: normal;
+  font-display: swap;
+}
+
+/* ========== THEME TOKENS — defy.works site_v2 + aws-cost-dashboard ==========
+ * Tokens, glass, hairlines and the mono "num-stamp" label come from
+ * site_v2. The dashboard's additions for dense data surfaces (tabular
+ * figures, metric-xl, shimmer loading) are carried over too. Lenis,
+ * the ring cursor and marquees are left out on purpose: this is a tool. */
+
+@theme {
+  /* Colors — ink + indigo scale */
+  --color-ink: #000000;
+  --color-shadow: #0a0a0a;
+  --color-indigo-50: #eef2ff;
+  --color-indigo-100: #e0e7ff;
+  --color-indigo-200: #c7d2fe;
+  --color-indigo-300: #a5b4fc;
+  --color-indigo-400: #818cf8;
+  --color-indigo-500: #6366f1;
+  --color-indigo-600: #4f46e5;
+  --color-indigo-700: #4338ca;
+  --color-indigo-800: #312e81;
+  --color-indigo-900: #1e1b4b;
+  --color-indigo-950: #0d0c2a;
+  --color-success: #22c55e;
+  --color-warning: #f59e0b;
+  --color-danger: #ef4444;
+
+  /* Fonts */
+  --font-display: "Space Grotesk", "SUIT", ui-sans-serif, system-ui, sans-serif;
+  --font-sans: "Space Grotesk", "SUIT", ui-sans-serif, system-ui, sans-serif;
+  --font-ko: "SUIT", "Space Grotesk", ui-sans-serif, sans-serif;
+  --font-mono: ui-monospace, "SF Mono", "Cascadia Code", Menlo, Consolas, monospace;
+
+  /* Motion — durations */
+  --duration-fast: 150ms;
+  --duration-normal: 250ms;
+  --duration-slow: 400ms;
+  --duration-slower: 800ms;
+
+  /* Motion — easings */
+  --ease-out-soft: cubic-bezier(0.16, 1, 0.3, 1);
+  --ease-in-out-soft: cubic-bezier(0.4, 0, 0.2, 1);
+  --ease-spring: cubic-bezier(0.68, -0.55, 0.265, 1.55);
+
+  /* Radii */
+  --radius-xs: 2px;
+  --radius-sm: 4px;
+  --radius-md: 8px;
+  --radius-lg: 12px;
+  --radius-xl: 16px;
+  --radius-2xl: 20px;
+
+  /* Containers / sizing */
+  --breakpoint-3xl: 1920px;
+
+  /* Shadows */
+  --shadow-glow-indigo: 0 0 40px rgba(99, 102, 241, 0.35);
+  --shadow-glow-indigo-lg: 0 0 80px rgba(99, 102, 241, 0.45);
+  --shadow-glass: 0 8px 32px rgba(0, 0, 0, 0.4);
+}
+
+/* ========== BASE ========== */
+
+:root {
+  color-scheme: dark;
+}
+
+html {
+  background: var(--color-ink);
+  color: white;
+  font-family: var(--font-display);
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  text-rendering: optimizeLegibility;
+}
+
+body {
+  min-height: 100dvh;
+  overflow-x: hidden;
+}
+
+:focus-visible {
+  outline: 2px solid var(--color-indigo-500);
+  outline-offset: 2px;
+  border-radius: 4px;
+}
+
+::selection {
+  background: var(--color-indigo-500);
+  color: white;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-delay: 0ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+}
+
+[lang="ko"],
+.font-ko {
+  font-family: var(--font-ko);
+}
+
+/* ========== UTILITIES (from site_v2) ========== */
+
+@utility glass {
+  background: color-mix(in srgb, var(--color-shadow) 52%, transparent);
+  backdrop-filter: blur(14px) saturate(1.1);
+  -webkit-backdrop-filter: blur(14px) saturate(1.1);
+  border: 1px solid color-mix(in srgb, white 18%, transparent);
+  border-radius: var(--radius-lg);
+}
+
+@utility glass-strong {
+  background: color-mix(in srgb, var(--color-shadow) 64%, transparent);
+  backdrop-filter: blur(18px) saturate(1.2);
+  -webkit-backdrop-filter: blur(18px) saturate(1.2);
+  border: 1px solid color-mix(in srgb, white 22%, transparent);
+  border-radius: var(--radius-lg);
+}
+
+@utility hairline {
+  height: 1px;
+  background: linear-gradient(
+    to right,
+    color-mix(in srgb, white 22%, transparent),
+    color-mix(in srgb, white 12%, transparent)
+  );
+}
+
+@utility grid-hairlines {
+  background-image:
+    linear-gradient(to right, rgba(255, 255, 255, 0.035) 1px, transparent 1px),
+    linear-gradient(to bottom, rgba(255, 255, 255, 0.035) 1px, transparent 1px);
+  background-size: 80px 80px;
+}
+
+@utility num-stamp {
+  font-family: var(--font-mono);
+  font-size: 11px;
+  letter-spacing: 0.24em;
+  text-transform: uppercase;
+  color: color-mix(in srgb, var(--color-indigo-300) 80%, transparent);
+}
+
+@utility rise-in {
+  opacity: 0;
+  transform: translateY(20px);
+  animation: rise-in 600ms var(--ease-out-soft) forwards;
+}
+@keyframes rise-in {
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Outlined display type. The stroke colour is its own variable because
+ * `currentColor` would inherit the transparent fill and vanish. */
+@utility outlined {
+  --outline-stroke: white;
+  color: transparent;
+  -webkit-text-stroke: 1.5px var(--outline-stroke);
+  paint-order: stroke fill;
+}
+
+/* Tabular figures wherever numbers sit in columns (dashboard rule). */
+.tnum,
+table {
+  font-variant-numeric: tabular-nums;
+  font-feature-settings: "tnum" 1;
+}
+
+/* Big metric readout — the one place type gets large on a data surface. */
+@utility metric-xl {
+  font-family: var(--font-display);
+  font-weight: 700;
+  letter-spacing: -0.04em;
+  line-height: 0.95;
+  font-variant-numeric: tabular-nums;
+  font-size: clamp(2.25rem, 5vw, 3.5rem);
+}
+
+/* Indeterminate shimmer for loading surfaces. */
+@utility shimmer-bar {
+  background: linear-gradient(
+    90deg,
+    rgba(255, 255, 255, 0.04) 0%,
+    rgba(255, 255, 255, 0.1) 50%,
+    rgba(255, 255, 255, 0.04) 100%
+  );
+  background-size: 200% 100%;
+  animation: shimmer 1.4s var(--ease-in-out-soft) infinite;
+}
+@keyframes shimmer {
+  from {
+    background-position: 200% 0;
+  }
+  to {
+    background-position: -200% 0;
+  }
+}
+
+/* Inline code / command blocks, as on the dashboard. */
+@utility code-block {
+  overflow-x: auto;
+  border-radius: var(--radius-md);
+  border: 1px solid color-mix(in srgb, white 12%, transparent);
+  background: color-mix(in srgb, white 4%, transparent);
+  padding: 1rem;
+  font-family: var(--font-mono);
+  font-size: 12px;
+  line-height: 1.6;
+  color: var(--color-indigo-200);
+}
+
+.skip-link {
+  position: absolute;
+  left: -9999px;
+  z-index: 999;
+  padding: 1rem 1.5rem;
+  background: var(--color-indigo-500);
+  color: white;
+  text-decoration: none;
+  border-radius: var(--radius-md);
+}
+.skip-link:focus {
+  left: 1rem;
+  top: 1rem;
+}
+
+/* ========== APP-SPECIFIC ========== */
+
+/* The artifact frame fills whatever is left under the chrome bar. */
+.artifact-frame {
+  width: 100%;
+  height: 100%;
+  border: 0;
+  background: white;
+  display: block;
+}
+
+/* Thin scrollbars inside panels */
+.thin-scroll {
+  scrollbar-width: thin;
+  scrollbar-color: rgba(255, 255, 255, 0.18) transparent;
+}
+
+/* Code editor textarea */
+.code-editor {
+  font-family: var(--font-mono);
+  font-size: 12.5px;
+  line-height: 1.55;
+  tab-size: 2;
+  white-space: pre;
+  resize: none;
+}
+
+@keyframes pulse-dot {
+  0%,
+  100% {
+    opacity: 0.35;
+  }
+  50% {
+    opacity: 1;
+  }
+}
+.pulse-dot {
+  animation: pulse-dot 1.6s var(--ease-in-out-soft) infinite;
+}
