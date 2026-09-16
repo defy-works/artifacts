@@ -63,7 +63,7 @@ export function layout(opts: { eyebrow: string; title: string; body: string; cta
     <tr><td align="center" style="padding:40px 16px;">
       <table role="presentation" width="100%" cellspacing="0" cellpadding="0" style="max-width:520px;">
         <tr><td style="padding:0 0 24px;font-size:13px;letter-spacing:-0.01em;">
-          <span style="font-weight:700;">artifacts</span> <span style="color:rgba(255,255,255,0.3);">/</span> <span style="color:rgba(255,255,255,0.6);">defy.works</span>
+          <span style="font-weight:700;">defy.works</span> <span style="color:rgba(255,255,255,0.3);">/</span> <span style="color:rgba(255,255,255,0.6);">artifacts</span>
         </td></tr>
         <tr><td style="background:#0a0a0a;border:1px solid rgba(255,255,255,0.14);border-radius:12px;padding:32px 28px;">
           <div style="font-family:ui-monospace,SFMono-Regular,Menlo,Consolas,monospace;font-size:11px;letter-spacing:0.24em;text-transform:uppercase;color:#a5b4fc;">${escape(eyebrow)}</div>

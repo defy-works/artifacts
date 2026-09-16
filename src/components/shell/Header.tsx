@@ -47,11 +47,11 @@ export function Header() {
             className="h-7 w-7 shrink-0 transition-transform duration-[var(--duration-normal)] ease-[var(--ease-out-soft)] group-hover:rotate-[8deg]"
           />
           <span className="flex items-baseline gap-2 text-[12px] sm:text-[13px]">
-            <span className="font-display font-bold tracking-tight">artifacts</span>
+            <span className="font-display font-bold tracking-tight">defy.works</span>
             <span className="text-white/30" aria-hidden>
               /
             </span>
-            <span className="tracking-tight text-white/60">defy.works</span>
+            <span className="tracking-tight text-white/60">artifacts</span>
           </span>
         </NextLink>
 
