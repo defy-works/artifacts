@@ -42,11 +42,11 @@ SSE needs proxy buffering off; the stream sets `X-Accel-Buffering: no` and Traef
 
 ## Claude Code skill
 
-`skills/artifacts` is an Agent Skill and an npm package (`@defy-works/artifacts`). Install the skill with the `skills` CLI, or run the CLI straight from npm:
+`skills/artifacts` is an Agent Skill and an npm package (`@defyworks/artifacts`). Install the skill with the `skills` CLI, or run the CLI straight from npm:
 
 ```bash
 bunx skills add defy-works/artifacts --skill artifacts -g -a claude-code   # skill for Claude Code
-bunx @defy-works/artifacts help                                          # CLI only
+bunx @defyworks/artifacts help                                          # CLI only
 ```
 
 (`--skill artifacts` matters: the repo also carries its own project-only `openwolf` skill under `.claude/skills/`, which the CLI would otherwise install too.)

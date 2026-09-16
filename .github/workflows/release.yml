@@ -1,5 +1,5 @@
 name: Release
-# Publishes `@defy-works/artifacts` (the CLI + Claude Code skill in
+# Publishes `@defyworks/artifacts` (the CLI + Claude Code skill in
 # skills/artifacts) whenever the version in its package.json changes on the
 # default branch. Authenticates with npm trusted publishing (OIDC): npm is
 # configured for this repository, this workflow file (`release.yml`) and the

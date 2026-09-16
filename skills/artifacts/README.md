@@ -1,11 +1,11 @@
-# @defy-works/artifacts
+# @defyworks/artifacts
 
 CLI for the self-hosted [defy.works Artifacts](https://artifacts.defy.works) platform, packaged with its Claude Code skill. Publish interactive HTML pages from the terminal or from Claude Code, share them by email or link, and read or seed the live database behind each page.
 
 ```bash
-bunx @defy-works/artifacts login --url https://artifacts.defy.works --token art_…
-bunx @defy-works/artifacts publish page.html --slug retro --capabilities '{"db":{},"room":{}}' --link interact
-bunx @defy-works/artifacts help
+bunx @defyworks/artifacts login --url https://artifacts.defy.works --token art_…
+bunx @defyworks/artifacts publish page.html --slug retro --capabilities '{"db":{},"room":{}}' --link interact
+bunx @defyworks/artifacts help
 ```
 
 Tokens are created at `<site>/settings/tokens`. Config lives in `~/.config/artifacts/config.json` or `ARTIFACTS_URL` / `ARTIFACTS_TOKEN`.
