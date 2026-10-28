@@ -9,7 +9,7 @@ export function prepareHtml(
 ) {
   const tags =
     (opts.hasFiles ? `<base href="${opts.origin}/_files/${opts.artifactId}/">` : "") +
-    `<script src="${opts.origin}/claude-runtime.js"></script>`;
+    `<script src="${opts.origin}/claude-runtime.js?v=${process.env.RUNTIME_VERSION}"></script>`;
   const headMatch = /<head[^>]*>/i.exec(html);
   if (headMatch) {
     const at = headMatch.index + headMatch[0].length;
