@@ -486,6 +486,28 @@
     return p;
   }
 
+  // `#id` links: a srcdoc page resolves them against the host URL (or the
+  // injected <base>), so following one would load another page into the
+  // frame. Turn them into in-page fragment navigation. Registered on window
+  // so the page's own click handlers (smooth scroll, tabs) run first.
+  window.addEventListener("click", function (ev) {
+    if (ev.defaultPrevented || ev.button !== 0) return;
+    if (ev.metaKey || ev.ctrlKey || ev.shiftKey || ev.altKey) return;
+    var a = ev.target && ev.target.closest ? ev.target.closest("a") : null;
+    if (!a) return;
+    var href = a.getAttribute("href") || a.getAttribute("xlink:href");
+    if (!href || href.charAt(0) !== "#") return;
+    ev.preventDefault();
+    try {
+      location.hash = href;
+    } catch (e) {
+      var id = decodeURIComponent(href.slice(1));
+      var el = id ? document.getElementById(id) || document.getElementsByName(id)[0] : null;
+      if (el) el.scrollIntoView();
+      else if (!id || id === "top") window.scrollTo(0, 0);
+    }
+  });
+
   window.claude = freeze({ use: use });
   post({ type: "ready" });
 })();

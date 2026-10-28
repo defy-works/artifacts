@@ -60,6 +60,23 @@
         "coolify",
         "env"
       ]
+    },
+    {
+      "id": "srcdoc-hash-links",
+      "date": "2026-10-28",
+      "error_message": "Hash links (href=\"#id\") inside a published artifact load the host page (or /_files/<id>/) into the frame instead of scrolling",
+      "root_cause": "The viewer renders pages via a sandboxed srcdoc iframe; about:srcdoc documents resolve relative URLs against the host page URL (or the injected <base>), so '#id' becomes https://host/a/slug#id, a cross-document navigation",
+      "fix": "Runtime registers a window click listener: for <a> whose href attribute starts with '#', preventDefault and set location.hash (same-document fragment nav on about:srcdoc: scroll, :target and hashchange all work). Skips defaultPrevented clicks and modifier keys",
+      "files": [
+        "public/claude-runtime.js"
+      ],
+      "tags": [
+        "viewer",
+        "iframe",
+        "srcdoc",
+        "runtime",
+        "links"
+      ]
     }
   ]
 }
