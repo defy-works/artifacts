@@ -21,6 +21,10 @@ budget_tokens: 2000
 
 - **Project:** Artifacts
 
+- Production sits behind Cloudflare, which rewrites short or `no-cache` Cache-Control on static files to `max-age=14400`. Anything browsers must see right after a deploy (like `claude-runtime.js`) needs a versioned URL; the runtime gets `?v=<content hash>` from `RUNTIME_VERSION` in next.config.ts.
+- Published pages run in an `about:srcdoc` frame, so relative URLs, including `#hash`, resolve against the host page URL. The runtime turns same-page `#` links into `location.hash` updates.
+- Zen browser (the user's browser) paints an artifact frame's root in its own theme colour (purple-grey). A top margin that collapses through `<body>` then shows as a band. Pages need `html { background: … }` plus `body { display: flow-root }`. Thermetery mockup v8 fixed it.
+
 ## Do-Not-Repeat
 
 <!-- Mistakes made and corrected. Each entry prevents the same mistake recurring. -->

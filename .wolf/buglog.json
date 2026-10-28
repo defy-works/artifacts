@@ -66,7 +66,7 @@
       "date": "2026-10-28",
       "error_message": "Hash links (href=\"#id\") inside a published artifact load the host page (or /_files/<id>/) into the frame instead of scrolling",
       "root_cause": "The viewer renders pages via a sandboxed srcdoc iframe; about:srcdoc documents resolve relative URLs against the host page URL (or the injected <base>), so '#id' becomes https://host/a/slug#id, a cross-document navigation",
-      "fix": "Runtime registers a window click listener: for <a> whose href attribute starts with '#', preventDefault and set location.hash (same-document fragment nav on about:srcdoc: scroll, :target and hashchange all work). Skips defaultPrevented clicks and modifier keys. Follow-up: Cloudflare served /claude-runtime.js with max-age=14400, so browsers kept the old runtime for hours after deploy. The injected URL now carries ?v=<sha256 of the file> (next.config env RUNTIME_VERSION); versioned URL is immutable, bare URL no-cache",
+      "fix": "Runtime registers a window click listener: for <a> whose href attribute starts with '#', preventDefault and set location.hash (same-document fragment nav on about:srcdoc: scroll, :target and hashchange all work). Skips defaultPrevented clicks and modifier keys. Follow-up: Cloudflare served /claude-runtime.js with max-age=14400, so browsers kept the old runtime for hours after deploy. The injected URL now carries ?v=<sha256 of the file> (next.config env RUNTIME_VERSION); versioned URL is immutable, bare URL no-cache. Follow-up 2: in the user's Zen, assigning location.hash made the frame try to load about:srcdoc#\u2026 and show an error page. That didn't reproduce in a clean headless Zen 1.23.4b profile, so the cause is profile-specific. The runtime now uses history.pushState(state, '', 'about:srcdoc#\u2026'), which never loads anything, plus a synthetic hashchange and a manual scroll. It falls back to location.hash only where pushState throws (Playwright's Firefox)",
       "files": [
         "public/claude-runtime.js",
         "next.config.ts",
@@ -78,7 +78,9 @@
         "srcdoc",
         "runtime",
         "links",
-        "cache"
+        "cache",
+        "zen",
+        "firefox"
       ]
     }
   ]

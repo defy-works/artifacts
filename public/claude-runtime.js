@@ -488,8 +488,12 @@
 
   // `#id` links: a srcdoc page resolves them against the host URL (or the
   // injected <base>), so following one would load another page into the
-  // frame. Turn them into in-page fragment navigation. Registered on window
-  // so the page's own click handlers (smooth scroll, tabs) run first.
+  // frame. Handle them in-page instead. Registered on window so the page's
+  // own click handlers (smooth scroll, tabs) run first. Prefer pushState with
+  // the document's own URL: it only rewrites the fragment, so hash routers
+  // still see it, and it never loads anything. Assigning location.hash made
+  // Zen try to load about:srcdoc#… and show an error page; it is only the
+  // fallback for browsers that refuse pushState on an opaque-origin srcdoc.
   window.addEventListener("click", function (ev) {
     if (ev.defaultPrevented || ev.button !== 0) return;
     if (ev.metaKey || ev.ctrlKey || ev.shiftKey || ev.altKey) return;
@@ -498,14 +502,32 @@
     var href = a.getAttribute("href") || a.getAttribute("xlink:href");
     if (!href || href.charAt(0) !== "#") return;
     ev.preventDefault();
-    try {
-      location.hash = href;
-    } catch (e) {
-      var id = decodeURIComponent(href.slice(1));
-      var el = id ? document.getElementById(id) || document.getElementsByName(id)[0] : null;
-      if (el) el.scrollIntoView();
-      else if (!id || id === "top") window.scrollTo(0, 0);
+    var before = location.href;
+    var next = before.split("#")[0] + href;
+    if (next !== before) {
+      var pushed = false;
+      try {
+        history.pushState(history.state, "", next);
+        pushed = true;
+      } catch (e) {
+        try {
+          location.hash = href;
+          return;
+        } catch (e2) {
+          /* the scroll below still works */
+        }
+      }
+      if (pushed) window.dispatchEvent(new HashChangeEvent("hashchange", { oldURL: before, newURL: location.href }));
     }
+    var id = href.slice(1);
+    try {
+      id = decodeURIComponent(id);
+    } catch (e) {
+      /* keep the raw fragment */
+    }
+    var el = id ? document.getElementById(id) || document.getElementsByName(id)[0] : null;
+    if (el) el.scrollIntoView();
+    else if (!id || id.toLowerCase() === "top") window.scrollTo(0, 0);
   });
 
   window.claude = freeze({ use: use });
